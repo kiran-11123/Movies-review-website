@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<style>
+    a{
+      border:none;
+      margin:0;
+      text-decoration:none;
+
+    }
+    nav li {
+      display:inline-block;
+      width:450px;
+      height:50px;
+      font-size:30px;
+
+      margin-left:500px;
+      margin-top:50px;
+
+      }
+      .b{
+      color:red;
+
+
+
+
+      }
+      .div{
+      background-color:pink;
+      width:1000px;
+      margin-top:-850px;
+
+
+      }
+      table ,th,td { border: 1px solid black; }
+    .b{
+        height:1000px;
+        width:1000px;
+
+     }
+     td{
+        text-align:center;
+        font-size:25px;
+        color:red;
+        font-family:sans-serif;
+
+     }
+     th{
+         color:black;
+         font-size:30px;
+
+
+     }
+     a{
+     text-decoration:none;}
+
+
+
+</style>
+<body>
+  <div>
+  <marquee direction='right',hspace='50',scrollamount='50'>
+    <img src="{% static 'img/kiran3.jpg' %}" height="400" width="400" alt="my image">
+    <img src="{% static 'img/bahubali.jpg' %}" height="400" width="400" alt="my images">
+    <img src="{% static 'img/rrr.jpg' %}" height="400" width="400" alt="my images">
+
+    
+  </marquee>
+  </div>
+
+  
+ 
+</body>
+</html>

@@ -1,0 +1,294 @@
+<html>
+
+<head>
+    <title> MY movies</title>
+</head>
+<style>
+    *{
+      box-sizing:border-box;
+      }
+      :root{
+      --primary-color:#22254b;
+      --secondary-color:#373b69;
+      }
+      body{
+      background-color:var(--primary-color);
+      margin:0;
+       font-family:sans-serif;
+      }
+      header{
+         padding:1rem;
+         display:flex;
+         justify-content:flex-end;
+         background-color:var(--secondary-color);
+      }
+      .search{
+       background-color:transparent;
+       border:2px solid var(--primary-color);
+       padding:0.5rem 1rem;
+       border-radius:50px;
+      font-size:1rem;
+      color:#fff;
+
+      }
+      .search:focus{
+      outline:0;
+      background-color:var(--primary-color);
+
+      }
+      main{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      }
+      .search:placeholder
+      {
+       color:#7378c5
+      }
+      .movie{
+           width:300px;
+           margin:1rem;
+           border-radius:3px;
+           box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+           background-color:var(--secondary-color);
+           position:relative;
+           overflow:hidden;
+
+      }
+      .movie img{
+           width:100%;
+      }
+      .movie-info{
+      color:#eee;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0.5rem 1rem 1rem;
+      letter-spacing:0.5px;
+
+      }
+      .movie-info h3{
+      height:20px
+      margin-top:0;
+
+      }
+      .movie-info span{
+      background-color:var(--primary-color);
+      padding:0.25rem 0.5rem;
+      border-radius:3px;
+      font-weight:bold;
+
+      }
+      .movie-info span.green{
+      color:lightgreen;
+      }
+      .movie-info span.orange{
+      color:orange;
+      }
+      .movie-info span.red{
+      color:red;
+      }
+      .over-view{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      background-color:#fff;
+      padding:1rem;
+      max-height:100%;
+      transform:translateY(101%);
+      transition:transform 0.3s ease-in;
+
+
+      }
+
+      .movie:hover .over-view{
+
+      transform:translateY(0);
+      }
+      nav li {
+      display:inline-block;
+      width:230px;
+      height:50px;
+      font-size:30px;
+      color:red;
+      margin-left:100px;
+      margin-top:-30px;
+
+      }
+      .b{margin-left:20px;}
+      nav li :hover{color:yellow;}
+
+</style>
+<body>
+<header>
+
+    <nav id="nav ">
+        <ol class="a">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="violet" style="margin-left:200px;"  class="bi bi-camera-reels" viewBox="0 0 16 16"> <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/> <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7zm6 8.73V7.27l-3.5 1.555v4.35l3.5 1.556zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/> <path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/> </svg>
+            <li style="margin-left:5px;"> <a href='/review' style="text-decoration:none"> <h1 style="color:red;font-size:30px">Review </h1></a></li>
+          <svg style="color:orange;height:50px;width:50px;" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#d219b0" d="m665.216 768 110.848 192h-73.856L591.36 768H433.024L322.176 960H248.32l110.848-192H160a32 32 0 0 1-32-32V192H64a32 32 0 0 1 0-64h896a32 32 0 1 1 0 64h-64v544a32 32 0 0 1-32 32H665.216zM832 192H192v512h640V192zM352 448a32 32 0 0 1 32 32v64a32 32 0 0 1-64 0v-64a32 32 0 0 1 32-32zm160-64a32 32 0 0 1 32 32v128a32 32 0 0 1-64 0V416a32 32 0 0 1 32-32zm160-64a32 32 0 0 1 32 32v192a32 32 0 1 1-64 0V352a32 32 0 0 1 32-32z"></path></svg>
+            <li><a href="/analysis"><h1 style="height:50px;font-size:30px;color:red;background:transparent;border:transparent;margin-left:-90px;" >Movies-Analysis></h1></a></li>
+
+            <li> <a href="/genre"><h1 style="height:50px;font-size:30px;color:red;background:transparent;border:transparent;margin-left:-90px;"> Genre  </h1> </a></li>
+
+        </ol>
+    </nav>
+    <form id="form">
+        <input type="text" id="search" placeholder="search" class="search">
+
+
+    </form>
+
+</header>
+<main id="main">
+    <div class="movie">
+        <img src="kiran3.jpg">
+        <div class="movie-info">
+            <h3> Movie title</h3>
+            <span class="green">9.8</span>
+        </div>
+        <div class="over-view">
+             <h3> overview</h3>
+            hello everyone hfsudgyid duegydugewfdblweff iohfebwfkgbfilknwekfhkebflwbfoulenfukgfijefbudgvf ufgigflwgfwfe fwegifgrk fuvwiegf
+        </div>
+    </div>
+        <div class="movie">
+        <img src="kiran3.jpg">
+        <div class="movie-info">
+            <h3> Movie title</h3>
+            <span class="orange">9.8</span>
+        </div>
+        <div class="over-view">
+
+             <h3> overview</h3>
+
+            hello everyone hello everyone hfsudgyid duegydugewfdblweff iohfebwfkgbfilknwekfhkebflwbfoulenfukgfijefbudgvf ufgigflwgfwfe fwegi
+        </div>
+    </div>
+        <div class="movie">
+        <img src="kiran3.jpg">
+        <div class="movie-info">
+            <h3> Movie title</h3>
+            <span class="red">9.8</span>
+        </div>
+        <div class="over-view">
+
+
+            <h3> overview</h3>
+            hello everyone hello everyone hfsudgyid duegydugewfdblweff iohfebwfkgbfilknwekfhkebflwbfoulenfukgfijefbudgvf ufgigflwgfwfe fwegi
+        </div>
+    </div>
+
+
+</main>
+
+</body>
+
+<script>
+    const API_KEY='api_key=3386c9158e908c7c2260890dda5fd20a';
+    const BASE_URL = 'https://api.themoviedb.org/3/';
+    const API_URL='https://api.themoviedb.org/3/discover/movie?api_key=3386c9158e908c7c2260890dda5fd20a';//BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
+    const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+    const search_url = BASE_URL + 'search/movie?'+API_KEY;
+
+    const main=document.getElementById('main');
+    const form=document.getElementById('form');
+     const search=document.getElementById('search');
+
+
+    getMovies(API_URL);
+
+
+    function getMovies(url){
+    fetch(url).then(res => res.json()).then(data => {
+             console.log(data.results)
+             showMovies(data.results);
+    })
+
+}
+
+
+  function showMovies(data){
+  main.innerHTML = ' ';
+
+     const revenuedata={}
+     data.forEach(movie =>{
+
+          const {title,poster_path,vote_average,overview,id}=movie;
+          url='https://api.themoviedb.org/3/movie/' +id+'?api_key=3386c9158e908c7c2260890dda5fd20a&primary_release_year=2017&sort_by=revenue.desc'
+          fetch(url).then(res => res.json()).then(data => {
+          if (data.revenue !=0){
+             revenuedata[title]='<input type="text" id='+title+' value='+data.revenue+' name='+title+' style="display:noe;">'
+             }})
+          const movieEl = document.createElement('div');
+          movieEl.classList.add('movie');
+          movieEl.innerHTML= `<img src="${IMG_URL+poster_path}" alt="${title}">
+        <div class="movie-info">
+            <h3> ${title} </h3>
+            <span class="${getcolor(vote_average)}">${vote_average}</span>
+        </div>
+        <div class="over-view">
+
+             <h3> overview</h3>
+            ${overview}
+        </div> `
+
+
+     main.appendChild(movieEl);
+
+     })
+     data.forEach(movie =>{
+
+          const {title,poster_path,vote_average,overview,id}=movie;
+            console.log(revenuedata);
+                 document.getElementById('data1').innerHTML=revenuedata.title;})
+
+
+}
+
+function getcolor(vote){
+ if(vote>=8){
+    return 'green'
+ }
+ else if(vote>=5)
+ {
+    return 'red'
+
+ }
+ else{
+  return 'orange'
+ }
+
+}
+
+form.addEventListener('submit',(e) =>{
+
+e.preventDefault()
+
+const searchTerm=search.value;
+if(searchTerm) {
+ getMovies(search_url+'&query='+searchTerm)
+
+}
+else{
+getMovies(API_URL);
+
+}
+
+
+
+})
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
